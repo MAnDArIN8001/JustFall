@@ -11,11 +11,22 @@ public class FireObstacleView : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        if (_fireObstacle is not null)
+        {
+            _fireObstacle.OnMadeAttack += HandleAttack;
+        }
     }
 
     private void OnDisable()
     {
-        
+        if (_fireObstacle is not null)
+        {
+            _fireObstacle.OnMadeAttack -= HandleAttack;
+        }
+    }
+
+    private void HandleAttack()
+    {
+
     }
 }
